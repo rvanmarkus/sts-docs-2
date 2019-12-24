@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "",
+  pathPrefix: "/",
   siteMetadata: {
     subtitle: `Documentation`,
     siteName: `StackState`,
@@ -40,7 +40,7 @@ module.exports = {
         githubRepo: 'apollographql/apollo-server',
         defaultVersion: '1',
         versions: {
-          1: 'master'
+          1: 'origin/master'
         },
         sidebarCategories: {
           null: [
@@ -48,11 +48,11 @@ module.exports = {
             // 'getting-started',
             // 'whats-new'
           ],
-          // Features: [
-          //   'features/mocking',
-          //   'features/errors',
-          //   'features/data-sources'
-          // ]
+          Features: [
+            // 'features/mocking',
+            // 'features/errors',
+            // 'features/data-sources'
+          ]
         }
       }
     }
