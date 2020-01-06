@@ -59,7 +59,7 @@ module.exports = {
         root: __dirname,
         subtitle: 'Apollo Server',
         description: 'A guide to using Apollo Server',
-        githubRepo: 'rvanmarkus/sts-docs-2',
+        githubRepo: 'rvanmarkus/sts-docs-2.git',
         defaultVersion: '1',
         versions: {
           1: 'origin/version-1'
@@ -86,7 +86,6 @@ module.exports = {
         spectrumHandle: 'apollo',
         youtubeUrl: 'https://www.youtube.com/channel/UC0pEW_GOrMJ23l8QcrGdKSw',
         logoLink: 'https://www.apollographql.com/docs/',
-        defaultVersion: '1',
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
