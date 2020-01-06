@@ -59,10 +59,10 @@ module.exports = {
         root: __dirname,
         subtitle: 'Apollo Server',
         description: 'A guide to using Apollo Server',
-        githubRepo: 'apollographql/apollo-server',
+        githubRepo: 'rvanmarkus/sts-docs-2',
         defaultVersion: '1',
         versions: {
-          // 1: 'origin/master'
+          1: 'origin/master'
         },
         sidebarCategories: {  
           null: [
