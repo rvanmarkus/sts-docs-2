@@ -1,3 +1,25 @@
+const navConfig = {
+  'StackState Basics': {
+    url: 'https://docs.stackstate.com/',
+    description:
+      'Learn about each part of the StackState platform and how they all work together.'
+  },
+  'StackState Agent': {
+    url: 'https://docs.stackstate.com/agent',
+    description:
+      'Configure a production-ready GraphQL server to fetch and combine data from multiple sources.'
+  },
+  'StackState CLI': {
+    url: 'https://docs.stackstate.com/cli',
+    description:
+      "Manage the entirety of your React app's state and seamlessly execute GraphQL operations."
+  },
+  'StackState Analytics': {
+    url: 'https://docs.stackstate.com/analytics',
+    description:
+      "Integrate with Apollo's cloud service for schema versioning, metrics, and enhanced security."
+  }
+};
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
@@ -40,20 +62,31 @@ module.exports = {
         githubRepo: 'apollographql/apollo-server',
         defaultVersion: '1',
         versions: {
-          1: 'origin/master'
+          // 1: 'origin/master'
         },
-        sidebarCategories: {
+        sidebarCategories: {  
           null: [
             'index',
-            // 'getting-started',
+            'getting-started',
             // 'whats-new'
           ],
           Features: [
-            // 'features/mocking',
+            'api/apollo-server',
             // 'features/errors',
             // 'features/data-sources'
           ]
-        }
+        },
+        navConfig,
+        menuTitle: 'StackState Platform',
+        segmentApiKey: 'wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg',
+        algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
+        algoliaIndexName: 'apollodata',
+        baseUrl: 'https://docs.stackstate.com',
+        twitterHandle: 'apollographql',
+        spectrumHandle: 'apollo',
+        youtubeUrl: 'https://www.youtube.com/channel/UC0pEW_GOrMJ23l8QcrGdKSw',
+        logoLink: 'https://www.apollographql.com/docs/',
+        defaultVersion: '1',
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
