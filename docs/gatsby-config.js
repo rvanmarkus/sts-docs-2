@@ -55,7 +55,7 @@ module.exports = {
         githubRepo: 'rvanmarkus/sts-docs-2',
         defaultVersion: 2,
         versions: {
-          1: 'version-2',
+          1: 'version-3',
         },
         sidebarCategories: {  
           null: [
@@ -64,7 +64,6 @@ module.exports = {
           ],
           Features: [
             'api/apollo-server',
-
           ]
         },
         navConfig,
