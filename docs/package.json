@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "docs",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -12,7 +12,6 @@
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-source-filesystem": "^2.1.43",
-    "gatsby-theme-apollo-docs": "^3.1.11",
     "gatsby-transformer-sharp": "^2.3.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-starter-theme-workspace",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn workspace docs develop",
+    "build": "yarn workspace docs build",
+    "serve": "yarn workspace docs serve",
+    "deploy": "yarn workspace docs deploy",
+    "deploydev": "yarn workspace docs deploydev",
+    "sync": "node sync.js"
+  },
+  "workspaces": [
+    "gatsby-theme-docs",
+    "gatsby-theme-core",
+    "docs"
+  ],
+  "dependencies": {
+    "change-case": "^3.1.0"
+  },
+  "devDependencies": {
+    "markdown-magic": "^1.0.0",
+    "fs-extra": "^8.1.0"
+  }
+}

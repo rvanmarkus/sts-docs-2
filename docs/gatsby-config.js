@@ -47,7 +47,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-theme-apollo-docs',
+      resolve: 'gatsby-theme-docs',
       options: {
         root: __dirname,
         subtitle: 'Apollo Server',
