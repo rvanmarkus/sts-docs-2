@@ -23,34 +23,27 @@ const navConfig = {
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    subtitle: `Documentation`,
-    siteName: `StackState`,
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    subtitle: 'Documentation',
+    siteName: 'StackState',
+    title: 'Gatsby Default Starter',
+    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    author: '@gatsbyjs',
     twitterHandle: "@gostackstate"
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby-icon.png',
       },
     },
     {
@@ -59,22 +52,19 @@ module.exports = {
         root: __dirname,
         subtitle: 'Apollo Server',
         description: 'A guide to using Apollo Server',
-        // githubRepo: 'apollographql/apollo-server',
         githubRepo: 'rvanmarkus/sts-docs-2',
         defaultVersion: 2,
         versions: {
-          1: 'version-1',
+          1: 'version-2',
         },
         sidebarCategories: {  
           null: [
             'index',
             'getting-started',
-            // 'whats-new'
           ],
           Features: [
             'api/apollo-server',
-            // 'features/errors',
-            // 'features/data-sources'
+
           ]
         },
         navConfig,
@@ -89,8 +79,6 @@ module.exports = {
         logoLink: 'https://www.apollographql.com/docs/',
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
   ],
 }
