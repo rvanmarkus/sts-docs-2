@@ -1,12 +1,12 @@
 import React from 'react';
-import {ApolloIcon} from '@apollo/space-kit/icons/ApolloIcon';
+import { ReactComponent as StackStateLogo } from './logo.svg'
 
 export default function Logo() {
   return (
-    <ApolloIcon
+    <StackStateLogo
       style={{
         display: 'block',
-        width: 64,
+        width: 128,
         height: 'auto'
       }}
   />

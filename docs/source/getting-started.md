@@ -1,9 +1,9 @@
 ---
-title: Get started with StackState v2
+title: Get started with StackState v1.16.x
 description: 'Getting started with StackState'
 ---
 
-> This tutorial walks you through installing and configuring StackState 1.15.1.
+> This tutorial walks you through installing and configuring StackState 1.16.x.
 > If you're just getting started with GraphQL or the Apollo
 > platform, we recommend first completing the [full-stack tutorial](https://www.apollographql.com/docs/tutorial/introduction/).
 

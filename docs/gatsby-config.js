@@ -66,16 +66,16 @@ module.exports = {
             'api/apollo-server',
           ]
         },
-        navConfig,
+        navConfig,  
         menuTitle: 'StackState Platform',
         segmentApiKey: 'wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg',
         algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
         algoliaIndexName: 'apollodata',
         baseUrl: 'https://docs.stackstate.com',
-        twitterHandle: 'apollographql',
+        twitterHandle: 'gostackstate',
         spectrumHandle: 'apollo',
         youtubeUrl: 'https://www.youtube.com/channel/UC0pEW_GOrMJ23l8QcrGdKSw',
-        logoLink: 'https://www.apollographql.com/docs/',
+        logoLink: 'https://docs.stackstate.com',
       }
     }
 

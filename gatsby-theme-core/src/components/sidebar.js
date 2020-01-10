@@ -1,4 +1,4 @@
-import Logo from './logo';
+import Logo from './logo/logo';
 import PropTypes from 'prop-types';
 import React, {Fragment} from 'react';
 import breakpoints from '../utils/breakpoints';
