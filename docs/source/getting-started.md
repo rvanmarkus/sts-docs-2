@@ -1,232 +1,50 @@
 ---
-title: Get started with StackState v1.16.x
-description: 'Getting started with StackState'
+title: Get started with StackState v1.14.x
+description: 'Installing StackState 1.14.x'
 ---
 
-> This tutorial walks you through installing and configuring StackState 1.16.x.
-> If you're just getting started with GraphQL or the Apollo
-> platform, we recommend first completing the [full-stack tutorial](https://www.apollographql.com/docs/tutorial/introduction/).
+> This tutorial walks you through installing and configuring StackState 1.14.x.
+> If you're just getting started with using the StackState platform, we
+> recommend first completing the [StackState concepts](https://www.apollographql.com/docs/tutorial/introduction/) article.
 
-This tutorial helps you:
+## Requirements
 
-* Obtain a basic understanding of GraphQL principles
-* Define a GraphQL **schema** that represents the structure of your data set
-* Run an instance of Apollo Server that lets you execute queries against your schema
+Before starting the installation, ensure your system(s) meet StackState's [installation requirements](/getting-started).
 
-This tutorial assumes that you are familiar with the command line and
-JavaScript, and that you have a recent version of Node.js (8+) installed.
+## Install using the RPM distribution
 
-## Step 1: Create a new project
-
-1. From your preferred development directory, create a directory for a new project
-and `cd` into it:
-
-    ```bash
-    mkdir graphql-server-example
-    cd graphql-server-example
-    ```
-
-2. Initialize a new Node.js project with `npm` (or another package manager you
-prefer, such as Yarn):
-
-    ```bash
-    npm init --yes
-    ```
-
-Your project directory now contains a `package.json` file.
-
-## Step 2: Install dependencies
-
-Applications that run Apollo Server require two top-level dependencies:
-
-* [`apollo-server`](https://npm.im/apollo-server) is the core library for Apollo Server itself, which helps you define the shape of your data and how to fetch it.
-* [`graphql`](https://npm.im/graphql) is the library used to build a GraphQL schema and execute queries against it.
-
-Run the following command to install both of these dependencies and save them in
-your project's `node_modules` directory:
+**NOTE**: StackState requires **JDK 8** to run. This version of Java must already be present on the installation machine and will not automatically be installed by the `rpm` command.
 
 ```bash
-npm install apollo-server graphql
+LICENSE_KEY=<<<LICENSE_KEY>>> RECEIVER_BASE_URL="http://<<<HOST>>>:7077/" API_KEY=<<<API_KEY>>> SETUP=<<<PRODUCTION|DEVELOPMENT>>> rpm -i <stackstate>.rpm
 ```
 
-Also create an empty `index.js` file in your project's root directory:
+* `<<<LICENSE_KEY>>>`: Your license key provided by StackState.
+* `<<<HOST>>>`: Public DNS resolvable hostname external services can use to connect to
+  the installed StackState instance.
+* `<<<API_KEY>>>`: Secret key StackState agents must use to authenticate.
+* `SETUP`: Choose whether to install in production or development mode. These setups
+  should meet the [system-requirements](/getting-started).
+
+## Install using the DEB distribution
+
+**NOTE**: StackState requires **JDK 8** to run. This version of Java must already be present on the installation machine and will not automatically be installed by the `dpkg` command.
 
 ```bash
-touch index.js
+LICENSE_KEY=<<<LICENSE_KEY>>> RECEIVER_BASE_URL="http://<<<HOST>>>:7077/" API_KEY=<<<API_KEY>>> SETUP=<<<PRODUCTION|DEVELOPMENT>>> dpkg -i <stackstate>.deb
 ```
 
- To keep things
-simple, `index.js` will contain **all** of the code for this example application.
-
-## Step 3: Define your GraphQL schema
-
-Every GraphQL server (including Apollo Server) uses a **schema**
-to define the structure of data that clients can query.
-In this example, we'll create a server for querying a collection
-of books by title and author.
-
-Open `index.js` in your preferred editor and paste the following into it:
-
-```js:title=index.js
-const { ApolloServer, gql } = require('apollo-server');
-
-// A schema is a collection of type definitions (hence "typeDefs")
-// that together define the "shape" of queries that are executed against
-// your data.
-const typeDefs = gql`
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
-
-  # This "Book" type defines the queryable fields for every book in our data source.
-  type Book {
-    title: String
-    author: String
-  }
-
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "books" query returns an array of zero or more Books (defined above).
-  type Query {
-    books: [Book]
-  }
-`;
-```
-
-This snippet defines a simple, valid GraphQL schema. Clients will be able to execute
-a query named `books`, and our server will return an array of zero or more `Book`s.
-
-## Step 4: Define your data set
-
-Now that we've defined the _structure_ of our data, we can define the data itself.
-Apollo Server can fetch data from any source you connect to (including
-a database, a REST API, a static object storage service, or even another GraphQL
-server). For the purposes of this tutorial, we'll just hardcode some example data.
-
-Add the following to the bottom of `index.js`:
-
-```js:title=index.js
-const books = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
-```
-
-This snippet defines a simple data set that clients can query. Notice that the two
-objects in the array each match the structure of the `Book` type we defined in our schema.
-
-## Step 5: Define a resolver
-
-We've defined our data set, but Apollo Server doesn't know that it should
- _use_ that data set when it's executing a query. To fix this, we create a
- **resolver**.
-
-Resolvers tell Apollo Server _how_ to fetch the data associated with a particular
-type. Because our `Book` array is hardcoded, the corresponding resolver is
-straightforward.
-
-Add the following to the bottom of `index.js`:
-
-```js:title=index.js
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves books from the "books" array above.
-const resolvers = {
-  Query: {
-    books: () => books,
-  },
-};
-```
-
-## Step 6: Create an instance of `ApolloServer`
-
-We've defined our schema, data set, and resolver. Now we just need to provide
-this information to Apollo Server when we initialize it.
-
-Add the following to the bottom of `index.js`:
-
-```js:title=index.js
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers });
-
-// The `listen` method launches a web server.
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
-```
-
-## Step 7: Start the server
-
-We're ready to start our server! Run the following from your project's root
-directory:
-
-```bash
-node index.js
-```
-
-You should see the following output:
-
-```
-🚀 Server ready at http://localhost:4000/
-```
-
-We're up and running!
-
-## Step 8: Execute your first query
-
-We can now execute GraphQL queries on our server. To execute our first query,
-we'll use a tool called **GraphQL Playground**.
-
-> **Note:** If your server is deployed to an environment where `NODE_ENV` is
-> set to `production`, GraphQL Playground and introspection will be disabled by
-> default. To enable them, you'll need to explicitly set `playground: true` and
-> `introspection: true` within [the options to `ApolloServer`'s
-> constructor](https://www.apollographql.com/docs/apollo-server/api/apollo-server/#apolloserver).
-
-With your server still running, visit `http://localhost:4000` in your browser
-to open GraphQL Playground. (Apollo Server hosts GraphQL Playground automatically
-when you run it in development.)
-
-![GraphQL Playground](./images/getting-started/graphql-playground.png)
-
-The GraphQL Playground UI includes:
-
-* A text area (to the left) for writing queries
-* A Play button (the triangle button in the middle) for executing queries
-* A text area (to the right) for viewing query results
-* Views for schema inspection and generated documentation (via tabs on the right side)
-
-Our server supports a single query named `books`. Let's execute it!
-
-Here's a GraphQL **query string** for executing the `books` query:
-
-```
-{
-  books {
-    title
-    author
-  }
-}
-```
-
-Paste this string into the left text area and click the Play button. The
-results (from our hardcoded data set) appear on the right:
-
-![The response from our server shows title and author!](./images/getting-started/graphql-playground-response.png)
-
-One of the most important concepts of GraphQL is that clients can choose to query
-_only for the fields they need_. Delete `author` from the query string and execute
-it again. The response updates to include only the `title` field for each book!
+* `<<<LICENSE_KEY>>>`: Your license key provided by StackState.
+* `<<<HOST>>>`: Public DNS resolvable hostname external services can use to connect to
+  the installed StackState instance.
+* `<<<API_KEY>>>`: Secret key StackState agents must use to authenticate.
+* `SETUP`: Choose whether to install in production or development mode. These setups
+  should meet the [system-requirements](/getting-started).
 
 ## Next steps
 
-This example application is a great starting point for working with
-Apollo Server. Check out the following resources to learn more about the basics
-of schemas, resolvers, and deployment:
+Check out the following resources to learn more about the basics
+of setting up your monitoring using StackState:
 
 <!-- * [Schema basics](/schema/schema/) -->
 <!-- * [Fetching data with resolvers](/data/data/) -->
