@@ -24,7 +24,7 @@ Every user in StackState needs to have a subject and a set of [permissions](/rba
 
     Please note that the subject's name, as well as permissions, are case sensitive.
 
-### Finalize setting up roles for the file-based authentication
+## Finalize setting up roles for the file-based authentication
 
 If your StackState instance is configured with a file-based authentication, then you need to add newly created subjects to the config file and enable authentication.
 
