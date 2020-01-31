@@ -19,27 +19,12 @@ In this step, you determine which components of your topology are going to be ab
 
 The below example binds an Action to all components in the "Production" domain that are present in the "databases" layer.
 
- ```
-(domain IN ("Production") AND layer IN ("databases"))
- ```
-
 ## 3. Write a script for Action to execute
 
 This step determines Action's behavior when it is executed from the component context menu. The scripting language here is [Groovy](https://groovy-lang.org/), and you can script almost any action you need, from redirecting to another View with context, restarting remote components, to calling predictions for components. Find more about the possibilities of.  
 
 The below example shows a script that restarts your Kubernetes pods in the right cluster:
 
-```
-def cluster = component.synced.extTopologyelement.data.properties.k8sCluster
-def podName = component.name
-
-Http.post("http://myk8scluster.com/${cluster}/${podName}/restart")
-```
-
 ## 4. Provide a valid Identifier (optional)
 
 A valid Identifier for an Action is a URN that follows the below convention:
-
-```
-urn:stackpack:{stackpack-name}:component-action:{component-action-name}
-```
