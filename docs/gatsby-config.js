@@ -9,15 +9,15 @@ const navConfig = {
     description:
       'Find out how to install and start using StackState'
   },
-  'StackState RBAC': {
-    url: '/rbac/about_rbac',
-    description:
-      'Learn about our Role Based Access Control and start managing user access'
-  },
   'StackState CLI': {
     url: 'https://docs.stackstate.com/cli',
     description:
       "Start using StackState CLI tool"
+  },
+  'StackState RBAC': {
+    url: '/rbac/about_rbac',
+    description:
+      'Learn about our Role Based Access Control and start managing user access'
   }
 };
 module.exports = {
@@ -62,6 +62,12 @@ module.exports = {
             'index',
             'getting-started',
           ],
+          'Understand StackState': [
+            'concepts/4t_data_model',
+            'concepts/components_and_relations',
+            'concepts/layers_domains_and_environments',
+            'concepts/glossary',
+          ],
           'Download and Install StackState': [
             'get_started/download',
             'get_started/requirements',
@@ -87,6 +93,7 @@ module.exports = {
             'rbac/subject_configuration',
             'rbac/how_to_set_up_roles',
           ],
+          ''
         },
         navConfig,
         menuTitle: 'StackState Platform',

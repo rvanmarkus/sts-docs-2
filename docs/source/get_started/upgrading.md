@@ -86,7 +86,7 @@ Please note that permissions are stored in StackGraph, so performing an upgrade 
 
 ### Upgrade to 1.14.3
 
-* In version 1.14.3 the LDAP query prefix for users and groups was changed. If you are using LDAP authentication, then there are some changes you need to apply to your `application_stackstate.conf`. For detailed information check the [configuring-the-ldap-authentication-server](/setup/installation/authentication/#configuring-the-ldap-authentication-server) section.
+* In version 1.14.3 the LDAP query prefix for users and groups was changed. If you are using LDAP authentication, then there are some changes you need to apply to your `application_stackstate.conf`. For detailed information check the [configuring-the-ldap-authentication-server](/rbac/how_to_configure_ldap_authentication) section.
 
 ### Upgrade to 1.14.2
 
