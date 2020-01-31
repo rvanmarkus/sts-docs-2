@@ -63,7 +63,8 @@ module.exports = {
             'getting-started',
           ],
           Features: [
-            'api/apollo-server',
+            'rbac/about_rbac',
+            'actions/component_actions'
           ]
         },
         navConfig,  

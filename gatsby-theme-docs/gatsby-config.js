@@ -40,7 +40,7 @@ module.exports = ({
             .node.secondary rect,
             .node.secondary circle {
               stroke: ${colors.secondary};
-            }
+            } 
             .node.tertiary rect,
             .node.tertiary circle {
               stroke: ${colors.tertiaryLight};
