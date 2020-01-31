@@ -5,14 +5,14 @@ kind: Documentation
 
 This page describes the process of exporting and importing manual topology data, i.e. components and relations that are not synchronized via StackPacks.
 
-### Requirements
+## Requirements
 
 * [StackState CLI](/cli/)
 * Unix shell
 
-### Export
+## Export
 
-#### From version 1.15
+### From version 1.15
 
 To export all manually created components and relations to the file `manual_topo.stj`:
 
@@ -30,7 +30,7 @@ Explanation of the command:
 
  *Note*: manually created relations to synchronized components may fail on import if these synchronized components do not exist anymore.
 
-#### Before version 1.15
+### Before version 1.15
 
 Steps:
 
@@ -60,7 +60,7 @@ Explanation of the commands:
 1. The response is filtered to obtain a list of the to be exported StackState component and relation identifiers.
 1. An export of StackState data is made by providing the identifiers to the `sts graph export` command.
 
-### Import
+## Import
 
 Importing previously exported topology can be done with the following command, assuming that the file `manual_topo.stj` contains the contents from the [export](#export) section.
 

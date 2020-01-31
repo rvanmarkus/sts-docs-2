@@ -5,7 +5,7 @@ kind: Documentation
 
 StackState's configuration can be exported and imported. The import/export functionality can be used to automate the installation process and/or for backup purposes. An export and import can be made in the settings page of StackState's user interface by using the buttons 'Export Model' and 'Import Model'.
 
-### Automated configuration export
+## Automated configuration export
 
 The export of the configuration can be obtained by:
 
@@ -25,7 +25,7 @@ Note that the above CLI command returns output in the terminal window only. To g
 sts-cli graph list --ids ComponentAction | xargs sts graph export --ids < export.conf
 ```
 
-### Automated configuration export with authentication
+## Automated configuration export with authentication
 
 StackState server can be configured to authenticate users when they access the application. In this case, the export CLI script is required to first obtain a token before making the export request.
 
@@ -39,7 +39,7 @@ curl --fail -v -d "username=<my_username>&password=<my_password>" -H "Content-Ty
 SESSION=<session>; TOKEN=<token>; curl -v -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{"allNodesOfTypes":["ComponentType","RelationType","Domain","Layer","Environment","DataSource","QueryView","EventHandler","CheckFunction","BaselineFunction","PropagationFunction","EventHandlerFunction","ComponentTemplateFunction","RelationTemplateFunction","ComponentMappingFunction","RelationMappingFunction","IdExtractorFunction","ViewHealthStateConfigurationFunction","Sync"]}' -H Cookie:AkkaHttpPac4jSession=$SESSION -H X-Sts-Token:$TOKEN "http://<host>:7070/api/export?timeoutSeconds=300" > config.stj
 ```
 
-### Automated configuration import
+## Automated configuration import
 
 Import is intended to be a one-off action, importing multiple times might result in duplicate configuration entries. This behavior applies to importing nodes without any identifier. It is possible to clear StackState's configuration before an import. To clear StackState of any configuration use:
 
@@ -69,7 +69,7 @@ Or via the [CLI](/cli) by:
 sts graph import < export.stj
 ```
 
-### Importing or exporting individual configuration items
+## Importing or exporting individual configuration items
 
 It is possible to export and import individual configuration items through the StackState user interface. For example, to export a component type go to the Settings page and click on 'Component Types':
 
@@ -81,7 +81,7 @@ To export an individual component type, click on 'Export as config':
 
 An individual configuration item can be imported through settings button 'Import Model'.
 
-### Idempotent import/export
+## Idempotent import/export
 
 There is a way to use identifiers and namespaces that come with them to perform a configuration update of the specific sets of nodes idempotently. This approach does not lead to duplicates, but checks for the changes within a specified namespace and applies them to existing nodes, including removing nodes, as well as allow for creating the new ones.
 
@@ -93,9 +93,8 @@ For export:
 For import currently we have a curl way:
 `curl -XPOST http://yourInstance/api/import?namespace=urn:stackpack:{stackpack_name} --data @./filename -H 'Content-Type: application/json'`
 
-### Configuration Export Versioning
+## Configuration Export Versioning
 
-*Available since StackState version 1.14.0*
 
 As StackState evolves versioning of the exported Node elements is necessary. The export conf contains metadata stating the Node version (`_version`) which is useful in order to allow an autoupgrade to a more recent version of StackState and ensure compatibility.
 ```
@@ -137,12 +136,12 @@ As StackState evolves versioning of the exported Node elements is necessary. The
 }
 ```
 
-### Supported Configuration Export version
+## Supported Configuration Export version
 
 A configuration export is supported by versions of StackState that are equal or higher than the export's version and with the same major version (see [semver](https://semver.org)).
 The first configuration export version is *1.0.0*, and effectively any Node payload with a version below or missing the version field (`_version`) will be interpreted and auto-upgraded to version *1.0.0*.
 
-#### For example: ####
+### For example: ###
 
 Configuration export version *1.0.0* was introduced in StackState version *1.14.0*<br/>
 Later configuration export version *1.1.0* was introduced in StackState version *1.14.1*<br/>
@@ -151,7 +150,7 @@ Later configuration export version *2.0.0* was introduced in StackState version 
 This means that Nodes with Configuration version *1.0.0* will work on both StackState *1.14.0* and *1.14.1* but not in *1.15.0* as a major configuration export version (*2.0.0*) was introduced.
 As well it means that configuration export version *1.1.0* can only be used from StackState version *1.14.1* but not before as in *1.14.0*
 
-#### Configuration export versions ####
+### Configuration export versions ###
 The table below displays configuration export versions version and on which StackState versions they were introduced.
 <div class="table-responsive-sm">
 <table class="table table-sm table-bordered">

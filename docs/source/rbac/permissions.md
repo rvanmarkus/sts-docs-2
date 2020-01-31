@@ -6,17 +6,17 @@ aliases:
     - /authentication/permissions/
 ---
 
-### Permissions in StackState
+## Permissions in StackState
 
 Permissions in StackState are twofold: System permissions and View permissions. These two sets of permissions are prepared to allow administrators to take control over actions that users can perform inside StackState, as well as adjusting users' UI to their roles. This means that StackState can present a completely different interface and feature set according to the user's active role. UI elements that users don't have access to are simply not displayed in their UI.
 
 Please note that permissions are stored in StackGraph, so performing an upgrade with clear all data will also remove permission setup. Because permissions exist in StackGraph, in order to completely remove the user it needs to be removed from LDAP and from StackGraph manually.
 
-### Views permissions and system permissions
+## Views permissions and system permissions
 
 Views permissions are a set of permissions that allow for CRUD operations with Views in StackState. System permissions are scoping user capabilities like access to settings, query execution or scripting.
 
-### Predefined Admin and Guest roles
+## Predefined Admin and Guest roles
 
 StackState comes with two predefined roles - Admin and Guest. Admin is a power user that has all permissions and access to all views. On the other hand, the Guest user is fairly limited, as you can see below:
 
@@ -31,7 +31,7 @@ stackstate-guest  update-visualization  system
 stackstate-guest  access-view           everything
 ```
 
-### List of all permissions in StackState
+## List of all permissions in StackState
 
 | Permission  |
 |-------------|
@@ -54,9 +54,9 @@ stackstate-guest  access-view           everything
 | delete-view |
 
 
-### UI elements and permissions
+## UI elements and permissions
 
-#### Pages permissions
+### Pages permissions
 
 1. Analytics page - requires `access-analytics` permission. Without this permission, Analytics section is hidden in the UI, and it is not accessible via URL.
 2. StackPacks page - requires `manage-stackpacks` system permission. Without this permission, StackPacks section is hidden in the UI and it is not accessible via URL.
@@ -69,7 +69,7 @@ stackstate-guest  access-view           everything
 ![Pages1](/images/pages1.png)
 ![Pages2](/images/pages2.png)
 
-#### Navigation Bar permissions
+### Navigation Bar permissions
 
 1. Create a view - requires `create-views` system permission. If not granted, save buttons are not present for the user.  
 2. Save as... - requires `save-view` permission. It's dependant on `Everything` or the specific view permissions.
@@ -80,7 +80,7 @@ stackstate-guest  access-view           everything
 ![NavigationBar1](/images/navbar1.png)
 ![NavigationBar2](/images/navbar2.png)
 
-#### Topology capabilities permissions
+### Topology capabilities permissions
 
 1. Basic and Advanced filtering - `perform-custom-query` is required to access filtering tools. Filtering options are hidden for users without this permission.
 2. Component pane - requires system permissions: `manage-topology-elements`, `perform-custom-query`, and `read-settings`. Component pane is hidden for users without this set of permissions.
@@ -90,7 +90,7 @@ stackstate-guest  access-view           everything
 |:------------------------------:|:------------------------------:|:------------------------------:|
 | ![TopologyCapabilities1](/images/topocap1.png) | ![TopologyCapabilities2](/images/topocap2.png) | ![TopologyCapabilities3](/images/topocap3.png) |
 
-#### Topology views permissions
+### Topology views permissions
 
 1. Drag and drop components - requires `manage-topology-elements` system permission.
 2. Access to a node actions menu - requires `perform-custom-query` permission.  
@@ -99,7 +99,7 @@ stackstate-guest  access-view           everything
 ![TopologyView1](/images/topoview1.png) ![TopologyView2](/images/topoview2.png)
 
 
-#### Analytics Page permissions
+### Analytics Page permissions
 
 1. Executing scripts - requires `execute scripts` system permission. **Execute** button will not be present for users without this permission.
 
@@ -107,7 +107,7 @@ stackstate-guest  access-view           everything
 |:------------------------------:|:------------------------------:|:------------------------------:|
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| ![AnalyticsPage1](/images/anpage1.png) |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|
 
-#### Element Details permissions
+### Element Details permissions
 
 1. Data streams actions - requires `manage-topology-elements` system permission. Without this permission only "Inspect" action is available.
 2. Add data streams - requires `manage-topology-elements` system permission. Without this permission, user cannot see the **Add** button.
@@ -120,7 +120,7 @@ stackstate-guest  access-view           everything
 |:---------------------------------:|:---------------------------------:|
 | ![ElementDetails1](/images/eldet1.png) | ![ElementDetails2](/images/eldet2.png) |
 
-#### Settings permissions
+### Settings permissions
 
 Below capabilities are shared across all settings pages.
 
@@ -131,9 +131,9 @@ Below capabilities are shared across all settings pages.
 
 ![SettingsPermissions](/images/settings1.png)
 
-### Examples
+## Examples
 
-Important note: all permissions in StackState are case sensitive. 
+Important note: all permissions in StackState are case sensitive.
 
 List all permisions:
 

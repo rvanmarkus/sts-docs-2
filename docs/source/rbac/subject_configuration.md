@@ -3,15 +3,15 @@ title: Subject Configuration
 kind: Documentation
 ---
 
-### Link your existing LDAP to StackState RBAC
+## Link your existing LDAP to StackState RBAC
 
 StackState authentication is configured in a [config file](/installation/authentication/) that contains already predefined roles for the Guest user (very limited permission level) and the Admin user (full permission level). To change the configuration to use LDAP authentication check out this document: [How to configure LDAP authentication](/rbac/how_to_configure_ldap_authentication/).
 
-### How to make a new user, or a group, with scopes?
+## How to make a new user, or a group, with scopes?
 
 To create a new subject (a group or a username), you must follow the StackState CLI route below. When you create a subject, it has no permissions at first. All custom subjects need a scope by design, so they do not have access to the full topology. This is a security requirement that makes sure that users have access only to what they need.
 
-### Examples  
+## Examples  
 
 To create the `stackstate` subject with a scope that allows the user to see all elements with the "StackState" label, use the following command:
 

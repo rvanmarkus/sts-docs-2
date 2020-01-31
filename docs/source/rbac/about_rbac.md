@@ -25,7 +25,7 @@ Role Based Access Control (RBAC) is a critical function for any Managed Service 
 
 RBAC is an authorization system that provides fine-grained access management of StackState resources, that provides a clean and easy way to audit user privileges and to fix identified issues with access rights.
 
-### What can I do with RBAC?
+## What can I do with RBAC?
 
 Here are some examples of what you can do with RBAC:
 
@@ -34,10 +34,10 @@ Here are some examples of what you can do with RBAC:
 * Create a group for users with access to specific elements of the topology.
 
 
-### What is a role in StackState?
+## What is a role in StackState?
 A role in StackState is a combination of a [configured subject](/rbac/subject_configuration/) and a set of [permissions](/rbac/permissions/). Process of setting up a role in StackState is described in [How to set up roles](/rbac/how_to_set_up_roles/).
 
-### More on RBAC configuration
+## More on RBAC configuration
 
 * [Permissions](rbac/permissions/)
 * [Scopes](/rbac/scopes_in_rbac/)
