@@ -7,8 +7,6 @@ This how-to describes the steps to create a Component Action that can be execute
 
 To start working with Component Actions, go to the Settings page and then in Actions, select "Component Actions". There you can add a new Component Action or edit one that already exists.
 
-<!-- ![Component Actions](/images/component_actions.png) -->
-
 ## 1. Provide a name and description
 
 A Component Action requires a name that is displayed in the Quick Actions context menu; it is mandatory to provide a name. The Description, on the other hand, is optional. However, it is a good practice to provide a bit of explanation that gives more context about your Action.
@@ -27,7 +25,7 @@ The below example binds an Action to all components in the "Production" domain t
 
 ## 3. Write a script for Action to execute
 
-This step determines Action's behavior when it is executed from the component context menu. The scripting language here is [Groovy](https://groovy-lang.org/), and you can script almost any action you need, from redirecting to another View with context, restarting remote components, to calling predictions for components. Find more about the possibilities of [scripting in StackState](/scripting/).  
+This step determines Action's behavior when it is executed from the component context menu. The scripting language here is [Groovy](https://groovy-lang.org/), and you can script almost any action you need, from redirecting to another View with context, restarting remote components, to calling predictions for components. Find more about the possibilities of.  
 
 The below example shows a script that restarts your Kubernetes pods in the right cluster:
 
