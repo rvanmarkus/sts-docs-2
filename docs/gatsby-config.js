@@ -53,9 +53,9 @@ module.exports = {
         subtitle: 'Apollo Server',
         description: 'A guide to using Apollo Server',
         githubRepo: 'rvanmarkus/sts-docs-2',
-        defaultVersion: '1.15.x',
+        defaultVersion: '1.17.x',
         versions: {
-          '1.14.x': 'version-3',
+          '1.16.x': '1.16.x',
         },
         sidebarCategories: {  
           null: [

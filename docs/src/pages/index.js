@@ -12,15 +12,12 @@ const IndexPage = () => (
     <h3>Start with these resources ...</h3>
     <DocsCards>
       <DocsCard>
-        <DocsCardTitle>
-          Getting started
-        </DocsCardTitle>
-        <DocsCardSubTitle>
-          Get going in just small steps
-        </DocsCardSubTitle>
+        <DocsCardTitle>Getting started</DocsCardTitle>
+        <DocsCardSubTitle>Get going in just small steps</DocsCardSubTitle>
         <DocsCardLink>Download</DocsCardLink>
         <DocsCardLink>Configuration</DocsCardLink>
       </DocsCard>
+      
     </DocsCards>
 
     <Link to="/page-2/">Go to page 2</Link>
@@ -39,7 +36,7 @@ const DocsCardTitle = styled.h3({
 
 });
 
-const DocsCardLink = styled.h3({
+const DocsCardLink = styled(Link)({
 
 });
 
