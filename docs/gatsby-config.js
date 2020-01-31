@@ -93,7 +93,6 @@ module.exports = {
             'rbac/subject_configuration',
             'rbac/how_to_set_up_roles',
           ],
-          ''
         },
         navConfig,
         menuTitle: 'StackState Platform',
