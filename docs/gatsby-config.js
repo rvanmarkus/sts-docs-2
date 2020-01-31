@@ -80,7 +80,6 @@ module.exports = {
             'get_started/reverse_proxy',
           ],
           'Upgrade StackState': [
-            'get_started/upgrading',
           ],
           'About StackState RBAC': [
             'rbac/about_rbac',
