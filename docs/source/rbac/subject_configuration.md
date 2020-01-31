@@ -1,9 +1,10 @@
 ---
 title: Subject Configuration
+description: Subject configuration within StackState
 kind: Documentation
 ---
 
-### Link your existing LDAP to StackState RBAC
+## Link your existing LDAP to StackState RBAC
 
 StackState authentication is configured in a [config file](/installation/authentication/) that contains already predefined roles for the Guest user (very limited permission level) and the Admin user (full permission level). To change the configuration to use LDAP authentication check out this document: [How to configure LDAP authentication](/rbac/how_to_configure_ldap_authentication/).
 
