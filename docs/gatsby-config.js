@@ -70,11 +70,10 @@ module.exports = {
         navConfig,  
         menuTitle: 'StackState Platform',
         segmentApiKey: 'wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg',
-        algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
-        algoliaIndexName: 'apollodata',
+        algoliaApiKey: 'cbba24ce473368423ac137b91601c4dd',
+        algoliaIndexName: 'dev_stsdocs',
         baseUrl: 'https://docs.stackstate.com',
         twitterHandle: 'gostackstate',
-        spectrumHandle: 'apollo',
         youtubeUrl: 'https://www.youtube.com/channel/UC0pEW_GOrMJ23l8QcrGdKSw',
         logoLink: 'https://docs.stackstate.com',
       }

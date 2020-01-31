@@ -51,7 +51,7 @@ module.exports = {
   siteName: 'Apollo Docs',
   menuTitle: 'Apollo Platform',
   segmentApiKey: 'wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg',
-  algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
+  algoliaApiKey: '96d6e65f9c6f21c63f9b93b3a3e19673',
   algoliaIndexName: 'apollodata',
   baseUrl: 'https://www.apollographql.com',
   twitterHandle: 'apollographql',

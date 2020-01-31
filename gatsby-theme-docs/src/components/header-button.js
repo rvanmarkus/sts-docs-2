@@ -37,11 +37,11 @@ export default function HeaderButton() {
   return (
     <Container>
       <StyledLink
-        href="https://engine.apollographql.com?utm_source=docs-button"
+        href="https://info.stackstate.com/stackstate-go-free?utm_source=docs-button"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Launch Graph Manager
+        Launch StackState GO
         <StyledIcon weight="thin" />
       </StyledLink>
     </Container>

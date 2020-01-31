@@ -4,7 +4,6 @@ import SectionNav from './section-nav';
 import styled from '@emotion/styled';
 import useMount from 'react-use/lib/useMount';
 import {HEADER_HEIGHT} from './header';
-import {IconGithub} from '@apollo/space-kit/icons/IconGithub';
 import {IconSchema} from '@apollo/space-kit/icons/IconSchema';
 import {PageNav, breakpoints, colors} from 'gatsby-theme-core';
 import {ReactComponent as SpectrumLogo} from '../assets/spectrum.svg';
@@ -125,21 +124,21 @@ function AsideLink(props) {
   );
 }
 
-const EditLink = styled.div({
-  display: 'none',
-  marginTop: 48,
-  justifyContent: 'flex-end',
-  [breakpoints.lg]: {
-    display: 'flex'
-  },
-  [breakpoints.md]: {
-    display: 'none'
-  },
-  [breakpoints.sm]: {
-    display: 'flex',
-    marginTop: 24
-  }
-});
+// const EditLink = styled.div({
+//   display: 'none',
+//   marginTop: 48,
+//   justifyContent: 'flex-end',
+//   [breakpoints.lg]: {
+//     display: 'flex'
+//   },
+//   [breakpoints.md]: {
+//     display: 'none'
+//   },
+//   [breakpoints.sm]: {
+//     display: 'flex',
+//     marginTop: 24
+//   }
+// });
 
 export default function PageContent(props) {
   const contentRef = useRef(null);
@@ -185,11 +184,7 @@ export default function PageContent(props) {
     );
   });
 
-  const editLink = (
-    <AsideLink href={props.githubUrl}>
-      <IconGithub /> Edit on GitHub
-    </AsideLink>
-  );
+
 
   return (
     <Wrapper>
@@ -197,7 +192,6 @@ export default function PageContent(props) {
         <BodyContent ref={contentRef} className="content-wrapper">
           {props.children}
         </BodyContent>
-        <EditLink>{editLink}</EditLink>
         <PageNav
           prevPage={props.pages[pageIndex - 1]}
           nextPage={props.pages[pageIndex + 1]}
@@ -212,7 +206,6 @@ export default function PageContent(props) {
             imagesLoaded={imagesLoaded === imagesToLoad}
           />
         )}
-        {editLink}
         {props.spectrumUrl && (
           <AsideLink href={props.spectrumUrl}>
             <SpectrumLogo /> Discuss on Spectrum
