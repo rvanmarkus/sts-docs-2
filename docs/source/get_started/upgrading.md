@@ -3,8 +3,6 @@ title: Upgrading
 kind: Documentation
 ---
 
-This document describes the upgrade procedure for StackState.
-
 ## Determine the type of upgrade
 
 There are several ways of upgrading StackState, depending on your configuration setup and the changes in the StackState release. Please read the StackState release notes carefully before starting an upgrade.
@@ -34,8 +32,6 @@ Before upgrading StackState it is recommended to backup your configuration and t
 ## Uninstall StackPacks
 
 StackPacks that are going to be upgraded must first be uninstalled. This removes all StackPack configuration from StackState.
-
-**NOTE**: the StackPacks must be uninstalled using the version of StackState prior to the upgrade since this version can contain different installation logic from the new StackPack version.
 
 ## Upgrade StackState
 
