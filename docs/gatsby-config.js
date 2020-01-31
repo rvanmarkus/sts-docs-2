@@ -55,7 +55,7 @@ module.exports = {
         githubRepo: 'rvanmarkus/sts-docs-2',
         defaultVersion: '1.17.x',
         versions: {
-          '1.15.x': '1.15.x',
+          '1.15.x': 'other-version',
         },
         sidebarCategories: {
           null: [
