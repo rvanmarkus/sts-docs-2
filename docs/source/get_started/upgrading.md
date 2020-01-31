@@ -60,8 +60,6 @@ Once StackState has been upgraded and started, verify that the new installation 
 
 Please note that permissions are stored in StackGraph, so performing an upgrade with clear all data will also remove permission setup. Because permissions exist in StackGraph, in order to completely remove the user it needs to be removed from LDAP and from StackGraph manually.
 
-## Version-specific upgrade instructions
-
 ## Upgrade to 1.15.0
 
 * Upgrading to 1.15.0 will require you to reregister your license information. See https://docs.stackstate.com/setup/installation/configuration/#registering-your-license-key
