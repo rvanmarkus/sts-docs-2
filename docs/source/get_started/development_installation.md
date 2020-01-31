@@ -5,12 +5,12 @@ kind: Documentation
 
 ### Requirements
 
-Before starting the installation, ensure your system(s) meet StackState's development setup  [installation requirements](/get_started/installation/requirements/).
+Before starting the installation, ensure your system(s) meet StackState's [installation requirements](/setup/installation/requirements/).
 
-### Installing StackState in a development configuration
+### Installing StackState in a single-node configuration
 
-For a development setup of StackState, simply follow the instructions for
-[Installing StackState](/get_started/installation/install_stackstate), using `DEVELOPMENT` as the SETUP configuration parameter.
+For a basic single-node setup of StackState, simply follow the instructions for
+[Installing StackState](/setup/installation/install_stackstate).
 
 ### Starting and Stopping
 
