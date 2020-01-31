@@ -80,7 +80,7 @@ Configuration field explanation:
 
 ## Configuring the LDAP authentication server
 
-Follow the instructions on [How to configure LDAP authentication](/rbac/how_to_configure_ldap_authentication) page.
+Follow the instructions on [How to configure LDAP authentication](/rbac/how_to_configure_ldap_authentication/) page.
 
 ## REST API authentication
 

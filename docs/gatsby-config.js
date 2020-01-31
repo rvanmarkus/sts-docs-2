@@ -10,7 +10,7 @@ const navConfig = {
       'Find out how to install and start using StackState'
   },
   'StackState CLI': {
-    url: 'https://docs.stackstate.com/cli',
+    url: '/cli',
     description:
       "Start using StackState CLI tool"
   },
@@ -18,6 +18,11 @@ const navConfig = {
     url: '/rbac/about_rbac',
     description:
       'Learn about our Role Based Access Control and start managing user access'
+  },
+  'StackState Scripting Language': {
+    url: '/scripting/index',
+    description:
+      'Learn about StackState Scripting Language'
   }
 };
 module.exports = {
@@ -53,9 +58,9 @@ module.exports = {
         subtitle: 'Apollo Server',
         description: 'A guide to using Apollo Server',
         githubRepo: 'rvanmarkus/sts-docs-2',
-        defaultVersion: '1.17.x',
+        defaultVersion: '1.16.x',
         versions: {
-          '1.15.x': '1.15.x',
+          '1.15.x': '1.14.x',
         },
         sidebarCategories: {
           null: [
@@ -80,8 +85,12 @@ module.exports = {
             'get_started/authentication',
             'get_started/reverse_proxy',
           ],
-          'Upgrade StackState': [
-            'get_started/upgrading',
+          'About StackState CLI': [
+            'cli/get_started_with_stackstate_cli',
+          ],
+          'Use StackState CLI': [
+            'cli/working_with_stackstate_cli',
+            'Configure StackState with CLI',
           ],
           'About StackState RBAC': [
             'rbac/about_rbac',
@@ -93,7 +102,28 @@ module.exports = {
             'rbac/subject_configuration',
             'rbac/how_to_set_up_roles',
           ],
-          ''
+          'About Component Actions': [
+            'actions/component_actions',
+          ],
+          'Use Component Actions': [
+            'actions/how_to_configure_component_actions',
+          ],
+          'About StackState Scripting': [
+            'scripting/index',
+            'scripting/functions',
+            'scripting/integrating_external_services',
+          ],
+          'Script APIs': [
+            'scripting/topology',
+            'scripting/telemetry',
+            'scripting/http',
+            'scripting/predictions',
+            'scripting/component',
+          ],
+          'Types': [
+            'scripting/async_script_result',
+            'scripting/time',
+          ]
         },
         navConfig,
         menuTitle: 'StackState Platform',
