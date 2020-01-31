@@ -1,5 +1,6 @@
 ---
 title: Subject Configuration
+description: Subject configuration within StackState
 kind: Documentation
 ---
 
