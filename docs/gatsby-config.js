@@ -55,7 +55,6 @@ module.exports = {
         githubRepo: 'rvanmarkus/sts-docs-2',
         defaultVersion: '1.17.x',
         versions: {
-          '1.15.x': '1.15.x',
         },
         sidebarCategories: {
           null: [
@@ -93,7 +92,6 @@ module.exports = {
             'rbac/subject_configuration',
             'rbac/how_to_set_up_roles',
           ],
-          ''
         },
         navConfig,
         menuTitle: 'StackState Platform',
