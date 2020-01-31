@@ -9,11 +9,11 @@ Component Actions in StackState provide an ability to act based on various event
 
 Component Actions can be configured within StackState Settings or can be predefined in a StackPack.
 
-### What is a Component Action?
+## What is a Component Action?
 
 A Component Action is a script that can be executed for components bound to that script with an [STQL query](/how_tos/topology_selection_advanced/). A Component Action consists of a unique name that is case-sensitive, an STQL bind that selects components, and a script that determines Action's behavior. There are also optional fields for providing a description and an Identifier.
 
-### Component Actions in use
+## Component Actions in use
 
 Component Actions allow for a wide range of operations on components, for example:
 
@@ -21,7 +21,7 @@ Component Actions allow for a wide range of operations on components, for exampl
 * Navigation actions - Navigate to the AWS Management Console of a component showing erratic behavior.
 * Reporting actions - Show a report that predicts the next 24 hours of CPU usage of a Kubernetes pod.
 
-### How to get Component Actions?
+## How to get Component Actions?
 
 There are two ways of getting Component Actions in StackState:
 

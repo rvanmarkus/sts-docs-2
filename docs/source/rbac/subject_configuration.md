@@ -12,6 +12,8 @@ StackState authentication is configured in a [config file](/installation/authent
 
 To create a new subject (a group or a username), you must follow the StackState CLI route below. When you create a subject, it has no permissions at first. All custom subjects need a scope by design, so they do not have access to the full topology. This is a security requirement that makes sure that users have access only to what they need.
 
+## Examples  
+
 To create the `stackstate` subject with a scope that allows the user to see all elements with the "StackState" label, use the following command:
 
 ```

@@ -1,23 +1,23 @@
 const navConfig = {
-  'StackState Basics': {
-    url: 'https://docs.stackstate.com/',
+  'Understand StackState': {
+    url: '/concepts',
     description:
-      'Learn about each part of the StackState platform and how they all work together.'
+      "Learn about each part of the StackState platform and how they all work together"
   },
-  'StackState Agent': {
-    url: 'https://docs.stackstate.com/agent',
+  'Get started with StackState': {
+    url: '/get_started',
     description:
-      'Configure a production-ready GraphQL server to fetch and combine data from multiple sources.'
+      'Find out how to install and start using StackState'
+  },
+  'StackState RBAC': {
+    url: '/rbac/about_rbac',
+    description:
+      'Learn about our Role Based Access Control and start managing user access'
   },
   'StackState CLI': {
     url: 'https://docs.stackstate.com/cli',
     description:
-      "Manage the entirety of your React app's state and seamlessly execute GraphQL operations."
-  },
-  'StackState Analytics': {
-    url: 'https://docs.stackstate.com/analytics',
-    description:
-      "Integrate with Apollo's cloud service for schema versioning, metrics, and enhanced security."
+      "Start using StackState CLI tool"
   }
 };
 module.exports = {
@@ -57,17 +57,38 @@ module.exports = {
         versions: {
           '1.16.x': '1.16.x',
         },
-        sidebarCategories: {  
+        sidebarCategories: {
           null: [
             'index',
             'getting-started',
           ],
-          Features: [
+          'Download and Install StackState': [
+            'get_started/download',
+            'get_started/requirements',
+            'get_started/install_stackstate',
+            'get_started/development_installation',
+            'get_started/production_installation',
+          ],
+          'Configure StackSate Installation': [
+            'get_started/configuration',
+            'get_started/authentication',
+            'get_started/reverse_proxy',
+          ],
+          'Upgrade StackState': [
+            'get_started/upgrading',
+          ],
+          'About StackState RBAC': [
             'rbac/about_rbac',
-            'actions/component_actions'
-          ]
+            'rbac/permissions',
+            'rbac/scopes_in_rbac',
+          ],
+          'Use StackState RBAC': [
+            'rbac/how_to_configure_ldap_authentication',
+            'rbac/subject_configuration',
+            'rbac/how_to_set_up_roles',
+          ],
         },
-        navConfig,  
+        navConfig,
         menuTitle: 'StackState Platform',
         segmentApiKey: 'wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg',
         algoliaApiKey: 'cbba24ce473368423ac137b91601c4dd',

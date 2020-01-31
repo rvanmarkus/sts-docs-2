@@ -9,7 +9,7 @@ StackState is built to work with one of two authentication configurations: a fil
 
 LDAP configuration uses the `etc/application_stackstate.conf` file located in the StackState installation directory. Check out this page -[Configuring authentication - examples](/get_started/installation/authentication/) - for more information about `authentication` block of this file. Out of the box the configuration file is prepared to support [file-based authentication](/get_started/installation/authentication/#configuring-file-based-authentication); following changes are required to enable [LDAP authentication](/get_started/installation/authentication/#configuring-file-based-authentication):
 
-### 1. Enable authentication
+## 1. Enable authentication
 
 At the beginning of the `authentication` block of `application_stackstate.conf` file locate following lines:
 
@@ -28,7 +28,7 @@ authentication {
 ...
 ```
 
-### 2. Set the authentication server type
+## 2. Set the authentication server type
 
 As mentioned above, out of the box StackState configuration is set to a file-based authentication. To use LDAP configuration, locate the `authServerType` block in `authentication`:
 
@@ -69,7 +69,7 @@ authentication {
 ```
 
 
-### 3. Provide the connection details and bind credentials to LDAP server
+## 3. Provide the connection details and bind credentials to LDAP server
 
 Now you need to remove entire `stackstateAuthServer` block and replace it with connection information, such as the LDAP host address, the port number that LDAP is available at, and bind credentials, as below:
 
@@ -126,7 +126,7 @@ authentication {
 }
 ```
 
-### 4. Set the base directory where the user records are stored
+## 4. Set the base directory where the user records are stored
 
 In this step, you need to provide information about the hierarchical structure of entries ([Directory Information Tree](https://ldapwiki.com/wiki/Directory%20Information%20Tree)) used by LDAP. Follow the example below:
 
@@ -175,7 +175,7 @@ authentication {
 
 Please note that subjects (users or roles) created in StackState are stored in StackGraph, and to ensure they work with your LDAP configuration, subjects created in StackState must reflect the ones from your LDAP. With `bindCredentials` and `userQuery` configured, a username provided during login to StackState is checked against entries inside provided LDAP directories and their children directories.
 
-### 5. Set the base directory where the group membership records are stored
+## 5. Set the base directory where the group membership records are stored
 
 Similarly, as for users, you need to provide information about the group directories used by LDAP:
 
@@ -235,6 +235,6 @@ authentication {
 
 LDAP groups are reflecting [Roles](/rbac/how_to_set_up_roles/) in StackState - the Group name in LDAP must be the same as the Role subject name in StackState.
 
-### 6. Summary
+## 6. Summary
 
 After completion of all above steps your StackState configuration is ready to be used with LDAP in your organization. You can start creating [Subjects](/rbac/subject_configuration/), and setting up [Roles](/rbac/how_to_set_up_roles/). Find out more on pages describing [Scopes](/rbac/scopes_in_rbac/), and [Permissions](/rbac/permissions/).
